@@ -1,13 +1,39 @@
-// import Image from 'next/image'
-// import styles from './page.module.css'
+"use client"; // This is a client component
+
+import React, { useState } from 'react';
 import Image from 'next/image';
-// import logo_image from "../images/logo.png";
-// import phone_img from "../images/phone_img.png"
+import { BiSolidDownArrow } from 'react-icons/bi';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { ImCross } from 'react-icons/im';
 
 const page = () => {
+
+  const [h, setH] = useState("0");
+  const [rotate, setRotate] = useState("0");
+
+
+  const handleOpen = () => {
+    h === "0" ? setH("40") : setH("0");
+    rotate === "0" ? setRotate("180") : setRotate("0");
+  }
+
+
+  const [sH, setSH] = useState("0");
+  const [sRotate, setSRotate] = useState("0");
+  const [isburger, setIsburger] = useState("true");
+
+
+  const sHandleOpen = () => {
+    sH === "0" ? setSH("40") : setSH("0");
+    sRotate === "0" ? setSRotate("180") : setSRotate("0");
+  }
+
+
+
   return (
     <>
       {/* // Navbar */}
+
       <header>
         <div className="header_hero">
           <nav className='navigation'>
@@ -19,15 +45,36 @@ const page = () => {
               <li>Feature</li>
               <li>Price</li>
               <li>Download</li>
-              <li>Company</li>
-              <li>Support</li>
+
+              <li className='company_li' onClick={handleOpen} >Company <span className='company_name' style={{ rotate: `${rotate}deg` }} > <BiSolidDownArrow /></span>
+
+                <div className='hide_drop' style={{ height: `${h}vh` }} >
+                  <li>About Us</li>
+                  <li>Career</li>
+                  <li>Contact</li>
+                  <li>Blog</li>
+                </div>
+
+              </li>
+
+              <li className='company_li' onClick={sHandleOpen} >Support<span className='company_name' style={{ rotate: `${sRotate}deg` }} > <BiSolidDownArrow /></span>
+
+                <div className='hide_drop' style={{ height: `${sH}vh` }} >
+                  <li>Document</li>
+                  <li>Knowledge Base</li>
+                  <li>Community</li>
+                  <li>Getting Started</li>
+                </div>
+
+              </li>
+
             </ul>
             <div className='nav_button' >
               <button className="login" >Login</button>
               <button className="signup" >Signup</button>
+              {isburger === "true" ? <GiHamburgerMenu className='burger' onClick={() => setIsburger("false")} /> : <ImCross className='burger' onClick={() => setIsburger("true")} />}
             </div>
           </nav>
-
           <div className="hero">
             <h1> Securely connect any device, anywhere </h1>
             <p> ZeroTier lets you build modern, secure multi-point virtualized networks of almost any type. From robust peer-to-peer networking to multi-cloud mesh infrastructure, we enable global connectivity with the simplicity of a local network.</p>
@@ -37,6 +84,43 @@ const page = () => {
             </div>
           </div>
         </ div>
+
+        {/* hamburger navbar */}
+        {isburger === "true" ? <div className="ham_nav">
+
+          <ul>
+            <li>Feature</li>
+            <li>Price</li>
+            <li>Download</li>
+
+            <li className='company_li' onClick={handleOpen} >Company <span className='company_name' style={{ rotate: `${rotate}deg` }} > <BiSolidDownArrow /></span>
+
+              <div className='hide_drop' style={{ height: `${h}vh` }} >
+                <li>About Us</li>
+                <li>Career</li>
+                <li>Contact</li>
+                <li>Blog</li>
+              </div>
+
+            </li>
+
+            <li className='company_li' onClick={sHandleOpen} >Support<span className='company_name' style={{ rotate: `${sRotate}deg` }} > <BiSolidDownArrow /></span>
+
+              <div className='hide_drop' style={{ height: `${sH}vh` }} >
+                <li>Document</li>
+                <li>Knowledge Base</li>
+                <li>Community</li>
+                <li>Getting Started</li>
+              </div>
+
+            </li>
+            <li>login</li>
+
+          </ul>
+        </div> : ""}
+        {/* end hamburger navbar */}
+
+
       </header >
       {/* // end Navbar */}
 

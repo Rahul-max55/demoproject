@@ -27,6 +27,10 @@ body {
   /* background-color: aqua; */
 }
 
+.burger{
+  display: none;
+}
+
 .logo>p {
   margin: 0px 5px;
 }
@@ -49,6 +53,45 @@ body {
 .navigation ul li {
   margin: 0px calc(10px + 1vw);
 
+}
+
+.company_li {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  position: relative;
+}
+
+.hide_drop {
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  width: 18vw;
+  height: 40vh;
+  background-color: black;
+  position: absolute;
+  top: 35px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+
+.hide_drop>li {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+.company_name {
+  transition: all 0.5s ease-in;
+  margin: 5px 0px 0px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
 }
 
 
@@ -85,6 +128,29 @@ body {
   border: none;
 }
 
+/* hamburger */
+.ham_nav{
+  width: 100vw;
+  background-color: red;
+  min-height: 300px;
+  position: absolute;
+  top: 100px;
+}
+
+.ham_nav > ul{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  list-style: none;
+  font-size: 25px;
+}
+
+.ham_nav > ul > li{
+  margin: 10px;
+}
+/* hamburger */
+
 /* hero section started */
 .hero {
   margin-top: 20px;
@@ -95,7 +161,7 @@ body {
   padding: 0px 40px 0px calc(5px + 5%);
   /* background-color: red; */
   width: calc(300px + 25%);
-  min-height: 70%;
+  min-height: 400px;
 }
 
 .hero>h1 {
@@ -167,6 +233,8 @@ main>p {
   height: 450px;
 
 }
+
+
 
 .right_detail {
   /* background-color: black; */
@@ -278,7 +346,7 @@ main>p {
   width: 50%;
   height: 80%;
   background-color: #1a1a1a;
-  
+
 }
 
 /* end secure cards section */
@@ -291,6 +359,11 @@ main>p {
   .navigation ul {
     display: none;
   }
+
+    .burger {
+      display: block;
+      margin-left: 40px;
+    }
 
   .login {
     display: none;
