@@ -6,7 +6,7 @@ import { BiSolidDownArrow } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImCross } from 'react-icons/im';
 
-const page = () => {
+const Page = () => {
 
   const [h, setH] = useState("0");
   const [rotate, setRotate] = useState("0");
@@ -153,21 +153,21 @@ const page = () => {
 
         {/* gradiant cards */}
         <div className='all_innovative_cards' >
-          <h1>Used by the world's most innovative teams</h1>
+          <h1>{`Used by the world's most innovative teams`}</h1>
 
           <div className="innovative_card">
             <img src="/images/user-icon.png" alt="user-icon" width={60} />
-            <p>"In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us." <br /><br />
+            <p>In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us. <br /><br />
               PETER BOIN, PRINCIPAL SOFTWARE ENGINEER, ALLUME ENERGY</p>
           </div>
           <div className="innovative_card">
             <img src="/images/user-icon.png" alt="user-icon" width={60} />
-            <p>"In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us." <br /><br />
+            <p>In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us. <br /><br />
               PETER BOIN, PRINCIPAL SOFTWARE ENGINEER, ALLUME ENERGY</p>
           </div>
           <div className="innovative_card">
             <img src="/images/user-icon.png" alt="user-icon" width={60} />
-            <p>"In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us." <br /><br />
+            <p>In early product development, we needed a way to easily connect our growing IoT product-base to our systems. ZeroTier provided an easy, and reliable way to achieve that, and has been growing with us. <br /><br />
               PETER BOIN, PRINCIPAL SOFTWARE ENGINEER, ALLUME ENERGY</p>
           </div>
 
@@ -229,4 +229,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
